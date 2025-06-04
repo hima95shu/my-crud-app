@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+    <title>Search User</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Search User</h1>
+        <form th:action="@{/search}" method="post">
+            <input type="text" name="name" placeholder="Enter name" required />
+            <button type="submit">Search</button>
+        </form>
+
+        <div th:if="${user != null}" class="user-card">
+            <p><strong>Name:</strong> <span th:text="${user.name}"></span></p>
+            <p><strong>DOB:</strong> <span th:text="${user.dob}"></span></p>
+            <img th:src="@{${user.imagePath}}" alt="User Image" width="100" />
+        </div>
+        <p th:if="${notFound}" style="color:red;">No such user exists</p>
+    </div>
+</body>
+</html>
