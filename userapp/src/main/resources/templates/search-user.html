@@ -9,7 +9,10 @@
         <h1>Search User</h1>
         <form th:action="@{/search}" method="post">
             <input type="text" name="name" placeholder="Enter name" required />
-            <button type="submit">Search</button>
+            <button class="fancy-btn" type="submit">
+            <span>Search</span>
+            </button>
+
         </form>
 
         <div th:if="${user != null}" class="user-card">

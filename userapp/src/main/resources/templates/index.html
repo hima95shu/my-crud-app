@@ -7,8 +7,14 @@
 <body>
     <div class="container">
         <h1>User List</h1>
-        <a href="/add">Add User</a>
-        <a href="/search">Search User</a>
+        <a href="/add" 
+        <button class="fancy-btn" type="submit"><span>Add User</span>
+        </button>
+        </a>
+        <a href="/search" 
+        <button class="fancy-btn" type="submit"><spam>Search User</spam>
+        </button>
+        </a>
         <div th:each="user : ${users}" class="user-card">
             <p><strong>Name:</strong> <span th:text="${user.name}"></span></p>
             <p><strong>DOB:</strong> <span th:text="${user.dob}"></span></p>
